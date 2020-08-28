@@ -1,0 +1,21 @@
+<div class="container"><h3> Company search</h3>
+<div class = "p-mb-3 p-text-left">Use the button below to look up companies via an API.<br>
+  You can save a company's information by clicking the save-button located on the company's tooltip.<br>
+  The companies that you have saved can be viewed on the "Browse Saved"-site.</div>
+</div>
+<div class ="container">
+  <span class="p-buttonset">
+    <button pButton pRipple label="Search" (click)="handleClick()" icon="pi pi-search"></button>
+  </span>
+</div>
+<div class = "container">
+  <ul *ngIf="companies">
+    <li *ngFor="let company of companies">
+        <p class="name"> {{company.name}}</p>
+        <p class="address"> {{company.address.streetAddress}}</p>
+        <p class="zipcode"> {{company.address.zip}}</p>
+        <p class="state"> {{company.address.state}}</p>
+        <button class="savebutton" pButton pRipple label="Save" (click)="save(company)" icon="pi pi-save"></button>
+    </li>
+  </ul>
+</div>

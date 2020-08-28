@@ -1,0 +1,11 @@
+<div class = "container">
+  <ul *ngIf="companies">
+    <li *ngFor="let company of companies">
+      <p class="name"> {{company.name}}</p>
+      <p class="address"> {{company.address.streetAddress}}</p>
+      <p class="zipcode"> {{company.address.zip}}</p>
+      <p class="state"> {{company.address.state}}</p>
+      <button class="deletebutton" pButton pRipple label="Delete" (click)="delete(company)" icon="pi pi-trash"></button>
+    </li>
+  </ul>
+</div>
